@@ -1,0 +1,30 @@
+Creo una clase abstracta fecha, de la que no voy a poder instanciar nada;
+la creo porque tanto fecha latinoamericana, fecha norteamericana, y flexible
+tienen comportamiento en comun. Con todas tengo que saber cual es la fecha Anterior
+a la otra, cuantos dias pasaron entre dos fechas cualquiera sea el formato; ademas 
+de controlar el formato, que la fecha sea valida y obtener los dias, meses y anios
+ que lo hago en la clase abstracta para no repetir codigo.
+La Fecha cumple con el formato cuando la fecha ingresada no excede los 10 caracteres,
+y son todos del formato esperado segun si es latinoamerica, ISO, etc. Caso contrario,
+se muestra un error.
+Es fecha valida si existe, es decir, si ingreso una fecha con el dia 32 no es fecha valida.
+ Caso contrario, se muestra un error.
+Para calcular los dias entre dos fechas las paso, que pueden estar en cualquier 
+representacion, las convierto a Iso, para operar, y calculo el modulo 
+entre esas dos fechas con abs.
+Cuando verifico cual fecha es anterior, comparo sus años, sus meses, y por ultimo sus
+dias, y si son iguales devuelvo la primer fecha ingresada.
+Luego en cada formato de fecha, uso el constructor de fecha para ver si cumple
+con el formato indicado y ademas es una fecha valida,separo el dia, el mes
+ y el año segun el formato de la fecha en cuestion, por ejemplo:
+En el formato latinoamericano: "dd/mm/yyyy" se que las primeras dos ubicaciones
+corresponden al dia, luego de la 3 a las 5 el mes y el año de la 6 a la 10.
+Aqui podria haber hecho una funcion que la declare en la clase abstracta, que se llame extraer,
+y reciba dos indices y recorte entre esos valores, asi asignarlo a dia, mes, anio segun el caso,
+pero por un tema de claridad y orden, y para no declarar todo en la clase abstracta,
+deje que se encargue cada formato de fecha en extraer los dias, meses y anio, segun la
+ubicacion que ocupan en la fecha.
+Por ultimo, tengo la fecha flexible que ingreso una fecha, y si cumple el formato
+y la fecha de determinado tipo, me genera un formato en cuestion y me separa los dias,
+meses y años. Si no concuerda pasa al siguiente, y sigue asi hasta que, sino cumple
+ninguno me da error de fecha o formato.

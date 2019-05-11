@@ -8,7 +8,7 @@ public class FechaFlexible extends Fecha {
     private final String formatoLatinoamerica = "dd/MM/yyyy";
     private final String formatoNorteamerica = "MM/dd/yyyy";
     private final String formatoISO = "yyyy/MM/dd";
-    public FechaFlexible(String fecha) throws FormatoIncorrectoException, FechaNoValidaException {    
+    public FechaFlexible(String fecha) {    
         super();
         if (cumpleFormato(fecha, formatoLatinoamerica) && fechaValida(fecha, formatoLatinoamerica)) {
             FechaFormatoLatinoamericano fechaFormatoLatinoamericano = new FechaFormatoLatinoamericano(fecha);
